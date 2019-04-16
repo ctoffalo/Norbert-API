@@ -1,4 +1,3 @@
-*.sql
 node_modules/
 app_bkp.js
 .babelrc
