@@ -1,0 +1,14 @@
+//Obtengo un único prod de código 000008
+curl -X GET --header "Content-Type: application/json" --header "Accept: */*" "http://localhost:3000/products/000008"
+
+//Obtengo todos los prods
+curl -X GET --header "Content-Type: application/json" --header "Accept: */*" "http://localhost:3000/products"
+
+//Creación de producto
+curl -d '{"id_product": "0","id_node": 805, "name_product": "producto prueba Cristian 1 ", "description_product": null, "is_actived_product": "1", "datetime_added_product": null, "datetime_last_modified_product": "2011-11-30T16:05:17.000Z", "date_start_publish_product": null, "date_finish_publish_product": null, "imagen_product": null, "resumen_product": null, "codigo_product": "000008", "destacado_product": "", "oferta_product": "", "OFERTA_ART": 0, "CANMIN_OFERTA": 0, "OFERTA2_ART": 0, "CANMIN_OFERTA2": 0, "CANMIN_DETRDI_ART": 0, "PORBON_DETRDI_ART": 0, "CANAENT_DETRDI_ART": 0, "CANAFAC_DETRDI_ART": 0, "OBSERVA_DETRDI_ART": " ", "POSDATA_DETRDI_ART": " ", "TIPO_ART": "", "MARCA_CONSULTAR_ART": "", "MARCA_EXISTENCIA_ART": "", "MARCA_GRAVAMEN_ESPECIAL_PRODUCT": "", "LABORATORIO_ART": "GRAMON-MILLET ", "DROGA_ART": "VIT.+MINERALES ", "skin_name": null, "accion_farmacologica": "ETICOS ", "TIPOPRECIO": "L", "LISTA_PSICOTROPICO": "", "MARCA_DESCUENTOFAR": "", "tipo_oferta_product": null, "producto_etico": "E", "consultar_stock_product": null, "codigo_barra_product": "7791984000485||7790839000861||7790839980422", "novedad_product": null, "is_visible_product": "1", "is_marketable_product": "1", "REFRIGERADO": "", "TRAZABLE": "N", "DEVOLUCION": "" }' -H "Content-Type: application/json" -X POST http://localhost:3000/products
+
+//Actualización de producto (por ahora solo actualizable el name_product) con el código 0000082
+curl -d '{"name_product": "producto actualizado cristian", "codigo_product":"0000082"}' -H "Content-Type: application/json" -X PUT http://localhost:3000/products
+
+//Eliminación de un producto de código 000008
+curl -d '{"codigo_product":"000008"}' -H "Content-Type: application/json" -X DELETE http://localhost:3000/products
